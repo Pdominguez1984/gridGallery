@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #282c34;
+    font-family: sans-serif;
+    font-size: 3rem;
+}
+
+
+/*grid column star /end para definir a un item donde empieza y termina dentro de la grilla utilizo lineas*/
+
+
+/*grid column 1 span 3 empieza en la columna 1 y termina en la 3*/
+
+
+/*CLASE .WIDE =ancho*/
+
+
+/*
+.wide {
+    grid-column:span 2 elementos;
+}
+
+*/
+
+
+/*clase tall = alto*/
+
+
+/*
+gird-row: span 2 ;
+*/
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03afff;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-item:hover {
+    filter: opacity(0.9);
+    transform: scale(1.04);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /*repeat autofill crea columnas segun sea necesario para manipular el responsive ,minmax para definir el ancho de las columnas minimo 250px maximo 1fr 
+cuando se crean columnas con el autofill ocupan el espacio necesario , si le coloco autofit con menos elementos ocupa el ancho del contenedor grid*/
+    grid-auto-rows: minmax(200px, auto);
+    /*alto de la fila automatico segun el contenido del elemento*/
+    gap: 20px;
+    /*separacion entre elementos de la grilla*/
+    padding: 20px;
+    /*padding exterior*/
+    grid-auto-flow: dense;
+    /*ocupa en la grilla los espacios que quedarian vacios, es decir ordena los elementos en la grilla*/
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+@media (min-width: 600px) {
+    .wide {
+        grid-column: span 2;
+    }
+    .tall {
+        grid-row: span 2;
+    }
+}
+
+@media (min-width: 300px) {
+    .wide {
+        grid-column: span 2;
+    }
+    .tall {
+        grid-row: span 2;
+    }
+}
+
+
+/*ANIMACION*/
+
+
+/*
+
+#animacion {
+    animation-name: animar;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes animar {
+    0% {
+        transform: scale(.3);
+    }
+}
+
+*/
